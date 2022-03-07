@@ -55,7 +55,7 @@ html {
 }
 
 h3.title {
-	position: fixed;
+	position: absolute;
 	margin-top: 275px;
 	font-size: 30px;
 	color: #fff;
@@ -493,6 +493,10 @@ nav ul li a:hover {
 	color: black;
 }
 
+input:focus {
+	outline: none;
+}
+
 @media only screen and (min-width: 2560px) {
 	.container-index {
 		margin-top: 1200px;
@@ -501,7 +505,7 @@ nav ul li a:hover {
 
 @media only screen and (min-width: 1921px) and (max-width: 2560px) {
 	.container-index {
-		margin-top: 800px;
+		margin-top: 1000px;
 	}
 }
 
@@ -513,7 +517,7 @@ nav ul li a:hover {
 
 @media only screen and (min-width: 901px) and (max-width: 1366px) {
 	.container-index {
-		margin-top: 500px;
+		margin-top: 700px;
 	}
 }
 
@@ -528,18 +532,27 @@ nav ul li a:hover {
 	}
 
 	.box {
-		/*display: sticky;*/
+		display: sticky;
 		margin-top: 200px;
 		box-shadow: 1px 1px 40px #000000;
 	}
 
 	h3.title {
-		position: fixed;
+		position: absolute;
 		margin-top: 150px;
 		font-size: 30px;
 		color: #fff;
 		text-align: center;
 		text-shadow: 2px 2px 4px #000000;
+	}
+
+	label.checkbox {
+		position: sticky;
+		padding-right: 20px;
+	}
+
+	input:focus {
+		outline: none;
 	}
 
 	nav {
@@ -550,8 +563,9 @@ nav ul li a:hover {
 		font-size: 25px;
 		font-weight: 900;
 		letter-spacing: 6px;
-		margin-bottom: 5px;
+		/* margin-bottom: 5px; */
 		animation: text 1.5s 1;
+		margin-top: 300px;
 	}
 
 	.text2 {
@@ -563,10 +577,11 @@ nav ul li a:hover {
 	}
 
 	.text3 {
-		letter-spacing: 5px;
+		letter-spacing: 4px;
 		font-size: 12px;
 		opacity: 0;
 		animation: ani 1s ease-out 2.5s forwards;
+		margin-top: 30px;
 	}
 
 	@keyframes ani {
@@ -588,6 +603,10 @@ nav ul li a:hover {
 
 	.logo {
 		padding: 0;
+	}
+
+	.nav-btn {
+		margin-top: 15px;
 	}
 
 	.container-index span {
