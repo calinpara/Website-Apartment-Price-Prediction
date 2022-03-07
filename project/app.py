@@ -44,9 +44,9 @@ def prediction():
 	return render_template('predict.html')
 
 
-@main.route('/map.html')
-def map():
-	return render_template('map.html')
+@main.route('/about.html')
+def about():
+	return render_template('about.html')
 
 
 @main.route('/prediction-made',methods=['POST', 'GET'])

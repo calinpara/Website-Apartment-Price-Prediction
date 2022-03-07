@@ -48,7 +48,7 @@
 				{% if current_user.is_authenticated %}
 				<li><a href="{{ url_for('auth.logout') }}" class="cool-link">Logout</a></li>
 				{% endif %}
-				<li><a href="{{ url_for('main.map') }}" class="cool-link">Map</a></li>
+				<li><a href="{{ url_for('main.about') }}" class="cool-link">About</a></li>
 				<li><a href="{{ url_for('main.prediction') }}" class="cool-link">Predict</a></li>
 			</ul>
 		</div>

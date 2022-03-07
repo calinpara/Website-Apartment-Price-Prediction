@@ -166,15 +166,12 @@ select:focus {
 }
 
 .google-map {
-	position: relative;
+	position: static;
 	overflow: hidden;
 	border-radius: 40px;
-	height: 80%;
-	display: block;
 	color: white;
-	margin: auto;
 	margin-top: 100px;
-	width: 70%;
+	width: 50%;
 }
 
 .pred {
@@ -330,7 +327,7 @@ body.predict {
 	background-size: cover;
 }
 
-body.map {
+body.about {
 	background: url("background_pics/city_photo_6.jpg") no-repeat center center
 		fixed;
 	/*animation: transitionIn 1s;*/
@@ -532,7 +529,7 @@ input:focus {
 	}
 
 	.box {
-		display: sticky;
+		/* display: sticky; */
 		margin-top: 200px;
 		box-shadow: 1px 1px 40px #000000;
 	}
@@ -547,7 +544,7 @@ input:focus {
 	}
 
 	label.checkbox {
-		position: sticky;
+		position: static;
 		padding-right: 20px;
 		outline: none;
 		-webkit-tap-highlight-color: transparent;
