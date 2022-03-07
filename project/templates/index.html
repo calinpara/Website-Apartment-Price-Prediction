@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie-edge">
+	<title>Predictit</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="static/style.css">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+	<script type="text/javascript" src="static/script.js"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Actor&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="home">
+
+	<nav>
+		<input type="checkbox" id="nav" class="hidden">
+		<label for="nav" class="nav-btn">
+			<i></i>
+			<i></i>
+			<i></i>
+		</label>
+		<div class="logo">
+			<a href="#">Predictit</a>
+		</div>
+		<div class="nav-wrapper">
+			<ul id="main">
+				<li><a href="{{ url_for('main.home') }}" class="cool-link">Home</a></li>
+				{% if current_user.is_authenticated %}
+				<li><a href="{{ url_for('main.profile') }}" class="cool-link">Profile</a></li>
+				{% endif %}
+				{% if not current_user.is_authenticated %}
+				<li><a href="{{ url_for('auth.login') }}" class="cool-link">Login</a></li>
+				<li><a href="{{ url_for('auth.register') }}" class="cool-link">Register</a></li>
+				{% endif %}
+				{% if current_user.is_authenticated %}
+				<li><a href="{{ url_for('auth.logout') }}" class="cool-link">Logout</a></li>
+				{% endif %}
+				<li><a href="{{ url_for('main.map') }}" class="cool-link">Map</a></li>
+				<li><a href="{{ url_for('main.prediction') }}" class="cool-link">Predict</a></li>
+
+			</ul>
+		</div>
+	</nav>
+
+
+	<div class="container-index">
+		<span class="text1">Welcome to</span>
+		<span class="text2">Apartment Price Prediction</span>
+		<span class="text3" id="myQuote">Learn More</span>
+	</div>
+
+</body>
+
+</html>

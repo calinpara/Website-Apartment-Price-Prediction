@@ -1,0 +1,737 @@
+* {
+	box-sizing: border-box;
+	animation: transitionIn 0.2s;
+}
+
+@keyframes transitionIn {
+	from {
+		opacity: 0.5;
+		transform: rotateX(40deg);
+	}
+
+	to {
+		opacity: 1;
+		transform: rotateX(0);
+	}
+}
+
+html {
+	scroll-behavior: smooth;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll;
+	overflow: hidden;
+}
+
+.clock {
+	top: 100px;
+	position: relative;
+	/*background: #333333;*/
+	/*width: 200px;*/
+	padding: 10px;
+	text-align: center;
+	border-radius: 10px;
+	/*right: 100px;*/
+	margin: none;
+	/*z-index: -9999;*/
+	text-shadow: 2px 2px 4px #000000;
+}
+
+.clock-time,
+.clock-ampm {
+	font-size: 40px;
+	color: #eeeeee;
+}
+.clock-time {
+	font-size: 140px;
+}
+
+.box {
+	/*display: sticky;*/
+	margin-top: 320px;
+	box-shadow: 1px 1px 40px #000000;
+}
+
+h3.title {
+	position: fixed;
+	margin-top: 275px;
+	font-size: 30px;
+	color: #fff;
+	text-align: center;
+	text-shadow: 2px 2px 4px #000000;
+}
+
+div.title {
+	border-radius: 20px;
+	/*max-width: 350px;*/
+	/*	position: relative;
+	text-align: center;
+	top: 180px;
+	left: 600px;
+	font-size: 25px;
+	letter-spacing: 2px;
+	font-weight: 700;
+	color: black;
+	opacity: 0;
+	animation: ani 1s ease-out 0.2s forwards;
+	
+	/*width: 10%;*/
+
+	position: relative;
+	text-align: center;
+	top: 65px;
+	right: 10px;
+	font-size: 40px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	opacity: 0;
+	color: #eeeeee;
+	animation: ani 1s ease-out 0.2s forwards;
+	text-shadow: 2px 2px 4px #000000;
+}
+
+.ye {
+	position: relative;
+	text-align: center;
+	top: 100px;
+	/*right: 100px;*/
+	font-size: 40px;
+	opacity: 0;
+	animation: ani 1s ease-out 0.2s forwards;
+}
+
+.popover-body {
+	position: absolute;
+	background-color: white;
+	opacity: 0.9;
+	right: 180px;
+	border-radius: 10px;
+	width: 500px;
+	font-size: 20px;
+	font-weight: 500;
+	text-align: center;
+	padding-left: 10em;
+}
+
+.popover-arrow::after,
+.popover-arrow::before {
+	position: static;
+	margin: none;
+	display: none !important;
+}
+
+.btn.btn-secondary {
+	background-color: green;
+}
+
+.pred-form {
+	font-size: 20px;
+}
+
+input {
+	height: 40px;
+	font-size: 1rem;
+	font-family: "Poppins", sans-serif;
+}
+
+input:focus {
+	outline-color: #1e90ff;
+	outline-style: double;
+}
+
+select {
+	height: 40px;
+	font-size: 1rem;
+	font-family: "Poppins", sans-serif;
+}
+
+select:focus {
+	outline-color: #1e90ff;
+	outline-style: double;
+}
+
+.submit-btn {
+	background-color: #0060ff;
+
+	color: white;
+	text-decoration: none;
+	border: none;
+	border-radius: 8px;
+}
+.submit-btn:hover {
+	cursor: pointer;
+	background-color: #296ee1;
+}
+
+.google-map {
+	position: relative;
+	overflow: hidden;
+	border-radius: 40px;
+	height: 80%;
+	display: block;
+	color: white;
+	margin: auto;
+	margin-top: 100px;
+	width: 70%;
+}
+
+.pred {
+	margin-top: 90px;
+	font-size: 25px;
+	font-weight: 600;
+	letter-spacing: 2px;
+	color: #101010;
+	animation: ani 1s ease-out 0.5s forwards;
+}
+
+.apartamente {
+	text-shadow: 5px 9px 80px #000000;
+	font-size: 32px;
+	letter-spacing: 0px;
+	padding-left: 20px;
+}
+
+.buc {
+	padding-left: 30px;
+}
+
+.container-predict {
+	max-width: 350px;
+	margin: auto;
+	border-radius: 5px;
+	background-color: rgba(255, 255, 255, 0.95);
+	padding: 50px;
+	padding-top: 10px;
+	margin-top: 30px;
+	border-radius: 40px;
+	box-shadow: 1px 1px 25px #000000;
+	opacity: 0;
+	animation: ani 1s ease-out 0.2s forwards;
+}
+
+select:required:invalid {
+	color: gray;
+}
+option[value=""][disabled] {
+	display: none;
+}
+option {
+	color: black;
+}
+
+.container-index {
+	/*display: inline-block;*/
+	/*height: 700px;*/
+	text-align: center;
+	position: absolute;
+	/*margin-top: 750px;*/
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	animation: ani 2s ease-out forwards;
+}
+
+.container-index span {
+	color: white;
+	text-transform: uppercase;
+	display: block;
+}
+
+.text1 {
+	font-size: 70px;
+	font-weight: 900;
+	letter-spacing: 10px;
+	margin-bottom: 5px;
+	animation: text 1.5s 1;
+	text-shadow: 5px 4px 10px #000000;
+}
+
+.text2 {
+	font-weight: 900;
+	font-size: 30px;
+	color: #6ab04c;
+	letter-spacing: 20px;
+	margin-bottom: 60px;
+	text-shadow: 5px 4px 10px #000000;
+}
+
+.text3 {
+	letter-spacing: 6px;
+	font-size: 15px;
+	/*font-weight: 700;*/
+	opacity: 0;
+	animation: ani 1s ease-out 2.5s forwards;
+	text-shadow: 2px 4px 4px #000000;
+}
+
+@keyframes ani {
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes text {
+	0% {
+		color: black;
+		margin-bottom: -300px;
+	}
+	30% {
+		letter-spacing: 60px;
+		margin-bottom: -50px;
+	}
+}
+
+select,
+input {
+	width: 100%;
+	display: inline-block;
+	margin-bottom: 15px;
+}
+
+body.home {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	font-family: "Poppins", sans-serif;
+	font-weight: 400;
+	background: url(background_pics/city_photo_2.jpg) no-repeat center center
+		fixed;
+	background-size: cover;
+	background-position: center;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	/* Font Smoothing Below*/
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body.predict {
+	background: url(background_pics/city_photo_4.jpg) no-repeat center center
+		fixed;
+	/*animation: transitionIn 0.7s;*/
+	/*background-size:0 0;*/
+	background-size: cover;
+	background-position: center;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100vh;
+	font-family: "Poppins", sans-serif;
+	font-weight: 400;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-position: center;
+	background-size: cover;
+}
+
+body.map {
+	background: url("background_pics/city_photo_6.jpg") no-repeat center center
+		fixed;
+	/*animation: transitionIn 1s;*/
+	background-size: cover;
+	background-position: center;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	font-family: "Poppins", sans-serif;
+	font-weight: 100;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-position: center;
+	background-size: cover;
+}
+
+body.login {
+	background: url("background_pics/city_photo_8.jpg") no-repeat center center
+		fixed;
+	/*animation: transitionIn 1s;*/
+	/*background-size: 0 0:*/
+	background-attachment: fixed !important;
+	background-size: cover;
+	background-position: center;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100vh;
+	font-family: "Poppins", sans-serif;
+	font-weight: 100;
+	/*	overflow-x: hidden;
+	overflow-y: scroll;*/
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-position: center;
+	background-size: cover;
+}
+
+body.register {
+	background: url("background_pics/city_photo_7.jpg") no-repeat center center
+		fixed;
+	/*animation: transitionIn 1s;*/
+	/*background-size: 0 0:*/
+	background-attachment: fixed !important;
+	background-size: cover;
+	background-position: center;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100vh;
+	font-family: "Poppins", sans-serif;
+	font-weight: 100;
+	/*	overflow-x: hidden;
+	overflow-y: scroll;*/
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-position: center;
+	background-size: cover;
+}
+
+body.profile {
+	background: url("background_pics/city_photo_6.4.jpg") no-repeat center center
+		fixed;
+	background-attachment: fixed !important;
+	background-size: cover;
+	background-position: center;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100vh;
+	font-family: "Poppins", sans-serif;
+	font-weight: 100;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-position: center;
+	background-size: cover;
+}
+
+nav {
+	position: fixed;
+	width: 100%;
+	padding: 8px;
+	top: 10px;
+}
+
+.logo {
+	/*position: fixed;*/
+	float: left;
+	padding: 8px;
+	margin-left: 16px;
+	margin-top: 8px;
+	text-decoration: none;
+}
+
+.logo a,
+.logo a:hover {
+	color: #000;
+	font-weight: 900;
+	font-size: 40px;
+	letter-spacing: 0px;
+	text-decoration: none;
+	/*font-family: Optima;*/
+}
+
+/* Hides the input checkbox field on desktop and mobile */
+.hidden {
+	display: none;
+}
+
+nav ul {
+	float: right;
+	position: sticky;
+}
+
+nav ul li {
+	display: inline-block;
+	float: left;
+}
+
+nav ul li:not(:first-child) {
+	margin-left: 48px;
+}
+
+nav ul li:last-child {
+	margin-right: 24px;
+}
+
+nav ul li a,
+nav ul li a:hover {
+	/*This makes LI and the A tag the same dimensions*/
+	display: inline-block;
+	outline: none;
+	color: #000;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: 16px;
+	letter-spacing: 1px;
+	font-weight: 600;
+}
+
+.cool-link::after {
+	content: "";
+	display: block;
+	width: 0;
+	height: 2.3px;
+	background: #000;
+	transition: width 0.3s;
+}
+
+.cool-link:hover::after {
+	width: 100%;
+	transition: width 0.3s;
+	color: black;
+}
+
+@media only screen and (min-width: 2560px) {
+	.container-index {
+		margin-top: 1200px;
+	}
+}
+
+@media only screen and (min-width: 1921px) and (max-width: 2560px) {
+	.container-index {
+		margin-top: 800px;
+	}
+}
+
+@media only screen and (min-width: 1337px) and (max-width: 1920px) {
+	.container-index {
+		margin-top: 750px;
+	}
+}
+
+@media only screen and (min-width: 901px) and (max-width: 1366px) {
+	.container-index {
+		margin-top: 500px;
+	}
+}
+
+@media only screen and (min-width: 1px) and (max-width: 900px) {
+	.popover-body {
+		position: absolute;
+		background-color: white;
+		opacity: 0.9;
+		right: 200px;
+		border-radius: 10px;
+		width: 500px;
+	}
+
+	.box {
+		/*display: sticky;*/
+		margin-top: 200px;
+		box-shadow: 1px 1px 40px #000000;
+	}
+
+	h3.title {
+		position: fixed;
+		margin-top: 150px;
+		font-size: 30px;
+		color: #fff;
+		text-align: center;
+		text-shadow: 2px 2px 4px #000000;
+	}
+
+	nav {
+		position: static;
+	}
+
+	.text1 {
+		font-size: 25px;
+		font-weight: 900;
+		letter-spacing: 6px;
+		margin-bottom: 5px;
+		animation: text 1.5s 1;
+	}
+
+	.text2 {
+		font-weight: 900;
+		font-size: 20px;
+		color: #6ab04c;
+		letter-spacing: 7px;
+		margin-bottom: 50px;
+	}
+
+	.text3 {
+		letter-spacing: 5px;
+		font-size: 12px;
+		opacity: 0;
+		animation: ani 1s ease-out 2.5s forwards;
+	}
+
+	@keyframes ani {
+		100% {
+			opacity: 1;
+		}
+	}
+
+	@keyframes text {
+		0% {
+			color: black;
+			margin-bottom: -300px;
+		}
+		30% {
+			letter-spacing: 20px;
+			margin-bottom: -50px;
+		}
+	}
+
+	.logo {
+		padding: 0;
+	}
+
+	.container-index span {
+		margin-bottom: 40px;
+	}
+
+	.container-index {
+		margin-top: 500px;
+	}
+
+	.nav-wrapper {
+		/* Creates the mobile navigation Overlay and covers viewport because it's set to fixed */
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 50%;
+		height: 100%;
+		z-index: -1;
+		background-color: #fff;
+		opacity: 0;
+		transition: all 0.2s ease;
+		animation: none;
+	}
+
+	.nav-wrapper ul {
+		/* Places the Navigation Links in the center of page vertically */
+		position: absolute;
+		top: 15%;
+		transform: translateY(-50%);
+		width: 100%;
+		height: 20%;
+		z-index: 999;
+	}
+
+	.nav-wrapper ul li {
+		/* Removes nav items from being inline and stacks them */
+		display: block;
+		float: none;
+		width: 100%;
+		text-align: center;
+		margin-bottom: 10px;
+	}
+
+	/* Creates the transition effect on mobile */
+
+	.nav-wrapper ul li:nth-child(1) a {
+		transition-delay: 0.2s;
+	}
+	.nav-wrapper ul li:nth-child(2) a {
+		transition-delay: 0.3s;
+	}
+	.nav-wrapper ul li:nth-child(3) a {
+		transition-delay: 0.4s;
+	}
+	.nav-wrapper ul li:nth-child(4) a {
+		transition-delay: 0.5s;
+	}
+	.nav-wrapper ul li:nth-child(5) a {
+		transition-delay: 0.6s;
+	}
+
+	.nav-wrapper ul li:not(:first-child) {
+		margin-left: 0;
+	}
+
+	.nav-wrapper ul li a,
+	.nav-wrapper ul li a:hover {
+		padding: 10px;
+		opacity: 0;
+		color: #000;
+		font-size: 25px;
+		font-weight: 600px;
+		letter-spacing: 1.2px;
+		transform: translateX(-20px);
+		transition: all 0.2s ease;
+	}
+
+	.nav-btn {
+		/* Creates the mobile hamburger button and positions on the right side */
+
+		position: fixed;
+		outline: 1;
+		right: 25px;
+		top: 15px;
+		display: inline-block;
+		width: 48px;
+		height: 48px;
+		cursor: pointer;
+		z-index: 10;
+		border-radius: 50%;
+	}
+
+	.nav-btn i {
+		display: block;
+		width: 22px;
+		height: 4px;
+		background: #000;
+		border-radius: 3px;
+		margin-left: 14px;
+	}
+
+	.nav-btn i:nth-child(1) {
+		margin-top: 4px;
+	}
+	.nav-btn i:nth-child(2) {
+		margin-top: 4px;
+		opacity: 1;
+	}
+	.nav-btn i:nth-child(3) {
+		margin-top: 4px;
+	}
+
+	#nav:checked + .nav-btn {
+		transform: rotate(45deg);
+	}
+
+	#nav:checked + .nav-btn i {
+		background: #000;
+		transition: transform 0.2s ease;
+	}
+
+	#nav:checked + .nav-btn i:nth-child(1) {
+		transform: translateY(10px) rotate(180deg);
+	}
+
+	#nav:checked + .nav-btn i:nth-child(2) {
+		opacity: 0;
+	}
+
+	#nav:checked + .nav-btn i:nth-child(3) {
+		transform: translateY(-6px) rotate(90deg);
+	}
+
+	#nav:checked ~ .nav-wrapper {
+		opacity: 1;
+		z-index: 9;
+	}
+
+	#nav:checked ~ .nav-wrapper ul li a {
+		opacity: 1;
+		transform: translateX(0);
+	}
+
+	#nav:checked + .nav-btn i {
+		background-color: #000;
+	}
+}

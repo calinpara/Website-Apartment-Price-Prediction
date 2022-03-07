@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>Prediction Page</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/style.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Staatliches&display=swap" rel="stylesheet">
+
+
+
+
+</head>
+
+<body class="predict">
+
+    <nav>
+        <input type="checkbox" id="nav" class="hidden">
+        <label for="nav" class="nav-btn">
+            <i></i>
+            <i></i>
+            <i></i>
+        </label>
+        <div class="logo">
+            <a href="#">Predictit</a>
+        </div>
+        <div class="nav-wrapper">
+            <ul id="main">
+                <li><a href="{{ url_for('main.home') }}" class="cool-link">Home</a></li>
+                {% if current_user.is_authenticated %}
+                <li><a href="{{ url_for('main.profile') }}" class="cool-link">Profile</a></li>
+                {% endif %}
+                {% if not current_user.is_authenticated %}
+                <li><a href="{{ url_for('auth.login') }}" class="cool-link">Login</a></li>
+                <li><a href="{{ url_for('auth.register') }}" class="cool-link">Register</a></li>
+                {% endif %}
+                {% if current_user.is_authenticated %}
+                <li><a href="{{ url_for('auth.logout') }}" class="cool-link">Logout</a></li>
+                {% endif %}
+                <li><a href="{{ url_for('main.map') }}" class="cool-link">Map</a></li>
+                <li><a href="{{ url_for('main.prediction') }}" class="cool-link">Predict</a></li>
+        </div>
+    </nav>
+
+    <div class="pred" align="center">{{pred}}</div>
+
+    <!-- <div class="test"> shit</div> -->
+
+
+    <div class="container-predict">
+        <h1 class="apartamente">Predictie Pret Apartamente <div class="buc">Bucuresti</div>
+        </h1>
+        <form class="pred-form" action='/prediction-made' method="POST">
+            <input type="text" placeholder="Nr. camere" required name="Nr. camere"> <br> <br>
+            <input type="text" placeholder="Suprafata construita m2" required name="Suprafata construita"> <br> <br>
+            <select required name="Etaj">
+                <option value="">Selectati Etaj</option>
+                <option value="0">Demisol</option>
+                <option value="1">Etaj 1</option>
+                <option value="2">Etaj 10</option>
+                <option value="3">Etaj 11</option>
+                <option value="4">Etaj 12</option>
+                <option value="5">Etaj 13</option>
+                <option value="6">Etaj 14</option>
+                <option value="7">Etaj 16</option>
+                <option value="8">Etaj 17</option>
+                <option value="9">Etaj 2</option>
+                <option value="10">Etaj 3</option>
+                <option value="11">Etaj 4</option>
+                <option value="12">Etaj 5</option>
+                <option value="13">Etaj 6</option>
+                <option value="14">Etaj 7</option>
+                <option value="15">Etaj 8</option>
+                <option value="16">Etaj 9</option>
+                <option value="17">Mansarda</option>
+                <option value="18">Parter</option>
+                <option value="19">Ultimele 2 etaje</option>
+            </select> <br> <br>
+
+
+            <select required name="Nr. bai">
+                <option value="">Selectati Nr. bai</option>
+                <option value="0">1</option>
+                <option value="1">2</option>
+                <option value="2">3</option>
+            </select> <br> <br>
+
+
+            <input type="text" placeholder="An constructie" required name="An constructie"> <br> <br>
+
+
+
+            <select required name="Nr. balcoane">
+                <option value="">Selectati Nr. balcoane</option>
+                <option value="0">1</option>
+                <option value="1">2</option>
+                <option value="2">3</option>
+                <option value="3">4</option>
+            </select> <br> <br>
+
+
+            <select required name="Zona">
+                <option value="">Selectati Zona</option>
+                <option value="0">1 Decembrie 1918</option>
+                <option value="1">1 Mai</option>
+                <option value="2">13 Septembrie</option>
+                <option value="3">16 Februarie</option>
+                <option value="4">Alba Iulia</option>
+                <option value="5">Alexandriei</option>
+                <option value="6">Alexandru Obregia</option>
+                <option value="7">Andronache</option>
+                <option value="8">Antiaeriană</option>
+                <option value="9">Apusului</option>
+                <option value="10">Apărătorii Patriei</option>
+                <option value="11">Arcul de Triumf</option>
+                <option value="12">Armeneasca</option>
+                <option value="13">Aviaţiei</option>
+                <option value="14">Baba Novac</option>
+                <option value="15">Baicului</option>
+                <option value="16">Balta Albă</option>
+                <option value="17">Banu Manta</option>
+                <option value="18">Barbu Văcărescu</option>
+                <option value="19">Basarab</option>
+                <option value="20">Basarabia</option>
+                <option value="21">Beller</option>
+                <option value="22">Berceni</option>
+                <option value="23">Brâncoveanu</option>
+                <option value="24">Bucur Obor</option>
+                <option value="25">Bucureştii Noi</option>
+                <option value="26">Băneasa</option>
+                <option value="27">Calea Călăraşilor</option>
+                <option value="28">Calea Plevnei</option>
+                <option value="29">Calea Victoriei</option>
+                <option value="30">Camil Ressu</option>
+                <option value="31">Cantemir</option>
+                <option value="32">Capitale</option>
+                <option value="33">Central</option>
+                <option value="34">Centrul Civic</option>
+                <option value="35">Centrul Istoric</option>
+                <option value="36">Chibrit</option>
+                <option value="37">Chitila</option>
+                <option value="38">Chişinau</option>
+                <option value="39">Cişmigiu</option>
+                <option value="40">Clăbucet</option>
+                <option value="41">Colentina</option>
+                <option value="42">Costin Georgian</option>
+                <option value="43">Cotroceni</option>
+                <option value="44">Coşbuc</option>
+                <option value="45">Crângaşi</option>
+                <option value="46">Câmpia Libertăţii</option>
+                <option value="47">Dacia</option>
+                <option value="48">Decebal</option>
+                <option value="49">Doamna Ghica</option>
+                <option value="50">Domenii</option>
+                <option value="51">Dorobanţi</option>
+                <option value="52">Dristor</option>
+                <option value="53">Drumul Sării</option>
+                <option value="54">Drumul Taberei</option>
+                <option value="55">Dudeşti</option>
+                <option value="56">Dămăroaia</option>
+                <option value="57">Eminescu</option>
+                <option value="58">Eroii Revoluţiei</option>
+                <option value="59">Est</option>
+                <option value="60">Exterior Est</option>
+                <option value="61">Exterior Nord</option>
+                <option value="62">Exterior Sud</option>
+                <option value="63">Exterior Vest</option>
+                <option value="64">Ferdinand</option>
+                <option value="65">Ferentari</option>
+                <option value="66">Fizicienilor</option>
+                <option value="67">Floreasca</option>
+                <option value="68">Foişorul de Foc</option>
+                <option value="69">Fundeni</option>
+                <option value="70">Gara de Nord</option>
+                <option value="71">Ghencea</option>
+                <option value="72">Giuleşti</option>
+                <option value="73">Giurgiului</option>
+                <option value="74">Gorjului</option>
+                <option value="75">Griviţa</option>
+                <option value="76">Grozăveşti</option>
+                <option value="77">Haliu</option>
+                <option value="78">Herăstrău</option>
+                <option value="79">Iancu Nicolae</option>
+                <option value="80">Iancului</option>
+                <option value="81">Jiului</option>
+                <option value="82">Kiseleff</option>
+                <option value="83">Kogălniceanu</option>
+                <option value="84">Lacul Morii</option>
+                <option value="85">Lacul Tei</option>
+                <option value="86">Libertăţii</option>
+                <option value="87">Liviu Rebreanu</option>
+                <option value="88">Lizeanu</option>
+                <option value="89">Lujerului</option>
+                <option value="90">Magheru</option>
+                <option value="91">Matei Voievod</option>
+                <option value="92">Metalurgiei</option>
+                <option value="93">Mihai Bravu</option>
+                <option value="94">Militari</option>
+                <option value="95">Moineşti</option>
+                <option value="96">Morarilor</option>
+                <option value="97">Moşilor</option>
+                <option value="98">Muncii</option>
+                <option value="99">Mărgeanului</option>
+                <option value="100">Mărăşeşti</option>
+                <option value="101">Naţiunile Unite</option>
+                <option value="102">Nerva Traian</option>
+                <option value="103">Nicolae Grigorescu</option>
+                <option value="104">Nord</option>
+                <option value="105">Nord-Est</option>
+                <option value="106">Nordului</option>
+                <option value="107">Obor</option>
+                <option value="108">Octavian Goga</option>
+                <option value="109">Odăi</option>
+                <option value="110">Olteniţei</option>
+                <option value="111">Ozana</option>
+                <option value="112">P-ta Presei Libere</option>
+                <option value="113">P-ta Victoriei</option>
+                <option value="114">P-ţa Alba Iulia</option>
+                <option value="115">P-ţa Gorjului</option>
+                <option value="116">P-ţa Muncii</option>
+                <option value="117">P-ţa Reşiţa</option>
+                <option value="118">P-ţa Romană</option>
+                <option value="119">P-ţa Rosetti</option>
+                <option value="120">P-ţa Unirii</option>
+                <option value="121">P-ţa Universităţii</option>
+                <option value="122">P-ţa Victoriei</option>
+                <option value="123">Pache Protopopescu</option>
+                <option value="124">Pacii</option>
+                <option value="125">Pajura</option>
+                <option value="126">Panduri</option>
+                <option value="127">Pantelimon</option>
+                <option value="128">Parcul Carol</option>
+                <option value="129">Parcul Circului</option>
+                <option value="130">Pipera</option>
+                <option value="131">Plevneif</option>
+                <option value="132">Politehnica</option>
+                <option value="133">Polonă</option>
+                <option value="134">Prelungirea Ghencea</option>
+                <option value="135">Progresul</option>
+                <option value="136">Păcii</option>
+                <option value="137">Rahova</option>
+                <option value="138">Regie</option>
+                <option value="139">Romană</option>
+                <option value="140">Rosetti</option>
+                <option value="141">Sala Palatului</option>
+                <option value="142">Salajan</option>
+                <option value="143">Sebastian</option>
+                <option value="144">Siseşti</option>
+                <option value="145">Socului</option>
+                <option value="146">Splaiul Independenţei</option>
+                <option value="147">Splaiul Unirii</option>
+                <option value="148">Stefan cel Mare</option>
+                <option value="149">Străuleşti</option>
+                <option value="150">Sud</option>
+                <option value="151">Sud-Est</option>
+                <option value="152">Sud-Vest</option>
+                <option value="153">Sălaj</option>
+                <option value="154">Sălăjan</option>
+                <option value="155">Tei</option>
+                <option value="156">Teiul Doamnei</option>
+                <option value="157">Theodor Pallady</option>
+                <option value="158">Timişoara</option>
+                <option value="159">Timpuri Noi</option>
+                <option value="160">Tineretului</option>
+                <option value="161">Titan</option>
+                <option value="162">Titulescu</option>
+                <option value="163">Turda</option>
+                <option value="164">Ultracentral</option>
+                <option value="165">Unirii</option>
+                <option value="166">Universitate</option>
+                <option value="167">Uverturii</option>
+                <option value="168">Valea Ialomiţei</option>
+                <option value="169">Valea Oltului</option>
+                <option value="170">Vatra Luminoasă</option>
+                <option value="171">Vest</option>
+                <option value="172">Veteranilor</option>
+                <option value="173">Victoriei</option>
+                <option value="174">Viilor</option>
+                <option value="175">Virtuţii</option>
+                <option value="176">Vitan</option>
+                <option value="177">Vitan Mall</option>
+                <option value="178">Vitan-Bârzeşti</option>
+                <option value="179">Vitanul Nou</option>
+                <option value="180">Văcăresti</option>
+                <option value="181">Zeţarilor</option>
+                <option value="182">Ştefan cel Mare</option>
+                <option value="183">Ştirbei Vodă</option>
+            </select> <br> <br>
+
+
+            <select required name="Finalizat/In constructie">
+                <option value="">Finalizat/In constructie</option>
+                <option value="0">Finalizat</option>
+                <option value="1">In constructie</option>
+            </select> <br> <br>
+
+
+
+            <select required name="Inchise/Deschise">
+                <option value="">Balcon Inchis/Deschis</option>
+                <option value="0">Deschis</option>
+                <option value="1">Inchis</option>
+            </select> <br> <br>
+
+
+
+            <input type="submit" class="submit-btn" name="" value="Predict!">
+        </form>
+
+</body>
+
+</html>

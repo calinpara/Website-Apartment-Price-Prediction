@@ -1,0 +1,52 @@
+ <!DOCTYPE html>
+ <html>
+
+ <head>
+     <title>Map of Apartments Used</title>
+
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Staatliches&display=swap" rel="stylesheet">
+
+ </head>
+
+ <body class="map">
+     <nav>
+         <input type="checkbox" id="nav" class="hidden">
+         <label for="nav" class="nav-btn">
+             <i></i>
+             <i></i>
+             <i></i>
+         </label>
+         <div class="logo">
+             <a href="#">Predictit</a>
+         </div>
+         <div class="nav-wrapper">
+             <ul>
+                 <li><a href="{{ url_for('main.home') }}" class="cool-link">Home</a></li>
+                 {% if current_user.is_authenticated %}
+                 <li><a href="{{ url_for('main.profile') }}" class="cool-link">Profile</a></li>
+                 {% endif %}
+                 {% if not current_user.is_authenticated %}
+                 <li><a href="{{ url_for('auth.login') }}" class="cool-link">Login</a></li>
+                 <li><a href="{{ url_for('auth.register') }}" class="cool-link">Register</a></li>
+                 {% endif %}
+                 {% if current_user.is_authenticated %}
+                 <li><a href="{{ url_for('auth.logout') }}" class="cool-link">Logout</a></li>
+                 {% endif %}
+                 <li><a href="{{ url_for('main.map') }}" class="cool-link">Map</a></li>
+                 <li><a href="{{ url_for('main.prediction') }}" class="cool-link">Predict</a></li>
+             </ul>
+         </div>
+     </nav>
+     <iframe class="google-map" src="https://www.google.com/maps/d/embed?mid=11Ocgk_CSs03XWO2sBaSx6SzqKUfCA2Mw&hl=en"
+         class="google-map"></iframe>
+
+
+
+ </body>
+
+ </html>
