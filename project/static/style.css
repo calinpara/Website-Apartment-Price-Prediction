@@ -605,10 +605,6 @@ input:focus {
 		padding: 0;
 	}
 
-	.nav-btn {
-		margin-top: 15px;
-	}
-
 	.container-index span {
 		margin-bottom: 40px;
 	}
@@ -684,9 +680,14 @@ input:focus {
 		transition: all 0.2s ease;
 	}
 
+	a.cool-link {
+		-webkit-tap-highlight-color: transparent;
+	}
+
 	.nav-btn {
 		/* Creates the mobile hamburger button and positions on the right side */
-
+		margin-top: 15px;
+		-webkit-tap-highlight-color: transparent;
 		position: fixed;
 		outline: 1;
 		right: 25px;
