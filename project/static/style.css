@@ -549,10 +549,13 @@ input:focus {
 	label.checkbox {
 		position: sticky;
 		padding-right: 20px;
+		outline: none;
+		-webkit-tap-highlight-color: transparent;
 	}
 
 	input:focus {
 		outline: none;
+		-webkit-tap-highlight-color: transparent;
 	}
 
 	nav {
